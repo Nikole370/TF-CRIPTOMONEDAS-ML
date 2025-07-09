@@ -1,0 +1,11 @@
+<mat-toolbar color="primary">
+  <a mat-button routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Inicio</a>
+  <a mat-button routerLink="/recomendaciones" routerLinkActive="active-link">Recomendaciones</a>
+  <a mat-button routerLink="/simulacion" routerLinkActive="active-link">Simulación</a>
+  <a mat-button routerLink="/dashboard" routerLinkActive="active-link">Dashboard</a>
+  <a mat-button routerLink="/modelo" routerLinkActive="active-link">Info Modelo</a>
+</mat-toolbar>
+
+<div class="content">
+  <router-outlet></router-outlet>
+</div>

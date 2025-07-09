@@ -1,0 +1,26 @@
+<div class="recommendations-container">
+  <h2>Recomendaciones de Criptomonedas</h2>
+
+  <div class="input-row">
+    <label>Monto a invertir: </label>
+    <input type="number" [(ngModel)]="monto" />
+
+    <label>Umbral mínimo de probabilidad (%): </label>
+    <input type="number" [(ngModel)]="umbral" />
+  </div>
+
+  <p>Mostrando criptos con probabilidad ≥ {{ umbral }}%</p>
+
+  <div class="crypto-card" *ngFor="let crypto of cryptos" [ngClass]="{ hidden: crypto.probabilidad * 100 < umbral }">
+    <h3>{{ crypto.nombre }} <span class="tag">({{ crypto.narrativa }})</span></h3>
+
+    <div class="info">
+      <p>📈 Probabilidad de crecimiento: <strong>{{ (crypto.probabilidad * 100) | number: '1.0-0' }}%</strong></p>
+      <p>💰 Rentabilidad esperada: <strong>{{ (crypto.rentabilidad * 100) | number: '1.0-0' }}%</strong></p>
+    </div>
+
+    <mat-checkbox [(ngModel)]="crypto.seleccionada">Invertir en esta cripto</mat-checkbox>
+
+    <a [href]="crypto.enlace" target="_blank">🔗 Ver en CoinGecko</a>
+  </div>
+</div>

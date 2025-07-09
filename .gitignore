@@ -22,3 +22,19 @@ rad.json
 TestResults.xml
 
 .venv/
+
+# Ignorar todas las imágenes (formatos comunes)
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.svg
+
+# Ignorar carpeta con imágenes y EDA que no forman parte del código
+/monedas_completas/
+
+# Ignorar carpetas generadas automáticamente por Angular o herramientas del editor
+/front-crypto/.angular/
+/front-crypto/.vscode/
+/front-crypto/node_modules/
